@@ -14,11 +14,13 @@ function onError(contactError) {
     alert('onError!');
 };
 
-// find all contacts with 'Bob' in any name field
-var options      = new ContactFindOptions();
-options.filter   = "";
-options.multiple = true;
-options.desiredFields = [navigator.contacts.fieldType.id];
-options.hasPhoneNumber = true;
-var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
-navigator.contacts.find(fields, onSuccess, onError, options);
+function displayContacts(){
+	// find all contacts with 'Bob' in any name field
+	var options      = new ContactFindOptions();
+	options.filter   = "";
+	options.multiple = true;
+	options.desiredFields = [navigator.contacts.fieldType.id];
+	options.hasPhoneNumber = true;
+	var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
+	alert(navigator.contacts.find(fields, onSuccess, onError, options));
+}

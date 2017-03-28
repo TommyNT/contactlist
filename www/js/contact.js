@@ -21,6 +21,6 @@ function displayContacts(){
 	options.multiple = true;
 	options.desiredFields = [navigator.contacts.fieldType.id];
 	options.hasPhoneNumber = true;
-	var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
+	var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name, navigator.contacts.fieldType.phoneNumbers];
 	alert(navigator.contacts.find(fields, onSuccess, onError, options));
 }
